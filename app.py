@@ -196,7 +196,7 @@ if uploaded_file is not None:
         st.markdown("### Top 10 Most Sold Products (Alternative View)")
         with st.spinner('Loading chart...'):
             fig, ax = plt.subplots(figsize=(10,6))
-            filtered_df.groupby('Product_ID')['Orders'].sum().nlargest(10).sort_values(ascending=False).plot(kind='bar', ax=ax)
+            filtered_df.groupby('Product_ID')['Orders'].sum().nlargest(10).sort_values(ascending=False).plot(kind='bar', ax=ax, color='orange')
             plt.xticks(rotation=90)
             st.pyplot(fig)
             download_button(fig, "top_products_alternative.png")
