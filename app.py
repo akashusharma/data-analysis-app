@@ -6,9 +6,6 @@ from io import BytesIO
 
 st.set_page_config(page_title="Data Analysis", layout="wide")
 
-st.markdown("<h1 style='text-align: center;'>🎉 Data Analysis Web App</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center;'>Designed by Sanskar Sharma</h3>", unsafe_allow_html=True)
-
 st.title("📈 Data Analysis and Visualization Web Application")
 st.subheader("Designed by Sanskar Sharma")
 
