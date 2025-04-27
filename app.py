@@ -6,7 +6,7 @@ from io import BytesIO
 
 st.set_page_config(page_title="Data Analysis", layout="wide")
 
-st.title("📊📈Data Analysis and Visualization Web Application")
+st.title("📈Data Analysis and Visualization Web Application📉")
 
 # Function to download plots
 def download_button(fig, filename):
