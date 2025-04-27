@@ -7,7 +7,7 @@ from io import BytesIO
 st.set_page_config(page_title="Data Analysis", layout="wide")
 
 st.title("📈 Data Analysis and Visualization Web Application")
-st.subheader("   Designed by Sanskar Sharma")
+st.subheader(   "Designed by Sanskar Sharma")
 
 
 # Function to download plots
