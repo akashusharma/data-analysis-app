@@ -47,51 +47,6 @@ if uploaded_file is not None:
     st.subheader("Filtered Data")
     st.dataframe(filtered_df)
 
-# Machine Learning Part (Simple Prediction)
-
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import LabelEncoder
-
-st.subheader("🔮 Machine Learning: Predict Sales Amount")
-
-# Selecting features and target
-features = filtered_df[['Gender', 'Age Group', 'Occupation']]
-target = filtered_df['Amount']
-
-# Encode categorical variables
-le = LabelEncoder()
-for col in features.columns:
-    features[col] = le.fit_transform(features[col])
-
-# Split the data
-X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
-
-# Train the model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Model Score
-st.write(f"Model Training Score: {model.score(X_train, y_train)*100:.2f}%")
-
-# Making a simple prediction
-sample_input = {
-    'Gender': st.selectbox("Select Gender", options=filtered_df['Gender'].unique()),
-    'Age Group': st.selectbox("Select Age Group", options=filtered_df['Age Group'].unique()),
-    'Occupation': st.selectbox("Select Occupation", options=filtered_df['Occupation'].unique())
-}
-
-# Encode sample input
-sample_df = pd.DataFrame([sample_input])
-for col in sample_df.columns:
-    sample_df[col] = le.fit_transform(sample_df[col])
-
-# Predict
-predicted_amount = model.predict(sample_df)[0]
-st.success(f"Predicted Sales Amount: ₹{int(predicted_amount):,}")
-
-# 👇 After this, your existing "Visualizations" section will continue
-
 
     # Visualizations
     st.subheader("Visualizations")
