@@ -44,19 +44,6 @@ if uploaded_file is not None:
     st.subheader("Filtered Data")
     st.dataframe(filtered_df)
 
-    # KPIs / Metrics
-st.subheader("Key Metrics")
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.metric(label="Total Sales Amount", value=f"₹{filtered_df['Amount'].sum():,}")
-
-with col2:
-    st.metric(label="Total Orders", value=filtered_df['Orders'].sum())
-
-with col3:
-    st.metric(label="Unique Customers", value=filtered_df['Customer ID'].nunique())
-
     # Visualizations
     st.subheader("Visualizations")
 
