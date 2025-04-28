@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
 
-sns.set_style('whitegrid')
+sns.set_style('white')
 
 
 st.set_page_config(page_title="Data Analysis", layout="wide")
