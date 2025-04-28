@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
 
+sns.set_style('whitegrid')
+
+
 st.set_page_config(page_title="Data Analysis", layout="wide")
 
 st.title("📈 Data Analysis and Visualization Web Application")
